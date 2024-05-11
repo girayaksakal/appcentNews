@@ -7,14 +7,14 @@
 
 import SwiftUI
 
+
 struct NewsView: View {
     var body: some View {
         NavigationStack{
-            Text("NewsView")
+            ArticleListView(articles: Article.previewData)
                 .navigationTitle("Appcent News")
-        }
-        
             
+        }
     }
 }
 
