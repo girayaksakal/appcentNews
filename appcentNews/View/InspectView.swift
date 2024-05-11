@@ -84,7 +84,9 @@ struct InspectView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: shareButtonTapped, label: {
+                Button(action: {
+                    shareButtonTapped(url: articleNonOptional.articleURL)
+                }, label: {
                     Image(systemName: "square.and.arrow.up")
                 })
             }
@@ -104,9 +106,17 @@ struct InspectView: View {
         
     }
     
-    func shareButtonTapped() {}
-    
     func favButtonTapped() {}
+}
+
+extension View {
+    func shareButtonTapped(url: URL) {
+        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
+            .keyWindow?
+            .rootViewController?
+            .present(activityVC, animated: true)
+    }
 }
 
 #Preview {
