@@ -14,12 +14,14 @@ struct ContentView: View {
                 .tabItem {
                     Label("News", systemImage: "newspaper")
                 }
+                
             FavoritesView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                 }
         
         }
+        
     }
 }
 
