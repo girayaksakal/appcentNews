@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @EnvironmentObject var articleFavoriteViewModel: ArticleFavoritesVM
+    
     var body: some View {
         NavigationStack {
-            Text("FavoritesView")
+            ArticleListView(articles: articleFavoriteViewModel.favorites)
+                .overlay(overlayView(isEmpty: articleFavoriteViewModel.favorites.isEmpty))
                 .navigationTitle("Favorites")
         }
+    }
     
+    @ViewBuilder
+    func overlayView(isEmpty: Bool) -> some View {
+        if isEmpty {
+            PlaceholderView(text: "It's lonely here", image: Image(systemName: "heart"))
+        }
     }
 }
 

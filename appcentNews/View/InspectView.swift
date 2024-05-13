@@ -9,9 +9,10 @@ import SwiftUI
 
 struct InspectView: View {
     let article: Article?
-    @State private var viewOnSource = false
-    @State private var saved = false
     
+    @State private var viewOnSource = false
+        
+    @EnvironmentObject var articleFavoriteViewModel: ArticleFavoritesVM
     
     var articleNonOptional: Article {
         article ?? .previewData[0]
@@ -84,19 +85,18 @@ struct InspectView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: shareButtonTapped, label: {
+                Button(action: {
+                    shareButtonTapped(url: articleNonOptional.articleURL)
+                }, label: {
                     Image(systemName: "square.and.arrow.up")
                 })
             }
             
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: favButtonTapped, label: {
-                    if saved {
-                        Image(systemName: "hearth.fill")
-                    } else {
-                        Image(systemName: "heart")
-                    }
-                    
+                Button(action: {
+                    favButtonTapped(for: articleNonOptional)
+                } , label: {
+                    Image(systemName: articleFavoriteViewModel.isFavorited(for: articleNonOptional) ? "heart.fill" : "heart")
                 })
             }
         }
@@ -104,9 +104,28 @@ struct InspectView: View {
         
     }
     
-    func shareButtonTapped() {}
-    
-    func favButtonTapped() {}
+    private func favButtonTapped(for article: Article) {
+        let generator = UINotificationFeedbackGenerator()
+        if articleFavoriteViewModel.isFavorited(for: article) {
+            articleFavoriteViewModel.removeFavorites(for: article)
+        } else {
+            articleFavoriteViewModel.addFavorites(for: article)
+        }
+        
+        generator.notificationOccurred(.success)
+    }
+}
+
+extension View {
+    func shareButtonTapped(url: URL) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
+            .keyWindow?
+            .rootViewController?
+            .present(activityVC, animated: true)
+    }
 }
 
 #Preview {

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct appcentNewsApp: App {
+    @StateObject var articleFavoriteViewModel = ArticleFavoritesVM.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(articleFavoriteViewModel)
         }
     }
 }
