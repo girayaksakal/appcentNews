@@ -22,9 +22,7 @@ struct FetchTaskToken: Equatable {
 class ArticleNewsVM: ObservableObject {
     @Published var phase = DataFetchPhase<[Article]>.empty
     @Published var fetchTaskToken: FetchTaskToken
-//    @Published var searchQuery = ""
-//    @Published var history = [String]()
-    
+
     private let newsAPI = NewsAPI.shared
     
     init(articles: [Article]? = nil, query: String? = nil) {
