@@ -37,16 +37,20 @@ struct InspectView: View {
                     case .failure(_):
                         HStack {
                             Spacer()
-                            Image(systemName: "photo")
-                                .imageScale(.large)
+                            VStack {
+                                Image(systemName: "photo")
+                                    .imageScale(.large)
+                                Text("No image")
+                            }
                             Spacer()
                         }
                     @unknown default:
                         fatalError()
                     }
                 }
+                .frame(minHeight: 300)
+                
             }
-//            .frame(minWidth: 200, minHeight: 300)
             
             VStack(alignment: .leading) {
                 Text(articleNonOptional.title)
@@ -82,6 +86,7 @@ struct InspectView: View {
                 WebView(url: articleNonOptional.articleURL)
                     .ignoresSafeArea(edges: .bottom)
             })
+            
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -98,7 +103,13 @@ struct InspectView: View {
                 } , label: {
                     Image(systemName: articleFavoriteViewModel.isFavorited(for: articleNonOptional) ? "heart.fill" : "heart")
                 })
+                .padding(.top, 5)
+                .onAppear(perform: {
+                    articleFavoriteViewModel.triggerUpdate(for: articleNonOptional)
+                })
+                
             }
+        
         }
         .padding()
         
@@ -128,10 +139,14 @@ extension View {
     }
 }
 
-#Preview {
-    InspectView(article: .previewData[0])
-}
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    InspectView(article: .previewData[0])
+//}
 
+struct InspectView_Previews: PreviewProvider {
+    @StateObject static var favoritesVM = ArticleFavoritesVM.shared
+    static var previews: some View {
+        InspectView(article: .previewData[0])
+            .environmentObject(favoritesVM)
+    }
+}

@@ -34,7 +34,7 @@ struct NewsAPI {
         switch response.statusCode {
         case (200...299), (400...499):
             let apiResponse = try jsonDecoder.decode(NewsAPIResponse.self, from: data)
-            if apiResponse.status == "ok" {
+            if apiResponse.status == "ok" && apiResponse.totalResults != 0 {
                 return apiResponse.articles ?? []
             } else {
                 throw NSError(domain: "NewsAPI", code: 1, userInfo: [NSLocalizedDescriptionKey: apiResponse.message ?? "An error occured"])
@@ -47,8 +47,9 @@ struct NewsAPI {
     // MARK: - Generate URL with or without query
     func generateURL(query: String?) -> URL {
         let percentEncodedString = query?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+//        let encodedString = query?.replacingOccurrences(of: " ", with: "+")
         var url = "https://newsapi.org/v2/"
-        if let input = percentEncodedString {
+        if let input = query {
            url += "everything?q=\(input)&"
         } else {
             url += "top-headlines?"
@@ -56,6 +57,7 @@ struct NewsAPI {
             url += "country=us&"
         }
         url += "apiKey=\(apiKey ?? "")"
+        print("URL: \(url)")
         return URL(string: url)!
     }
 }

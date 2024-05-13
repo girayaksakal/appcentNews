@@ -44,6 +44,10 @@ class ArticleFavoritesVM: ObservableObject {
         favoritesUpdate()
     }
     
+    func triggerUpdate(for article: Article) {
+        favoritesUpdate()
+    }
+    
     private func favoritesUpdate() {
         let favorites = self.favorites
         Task.init {

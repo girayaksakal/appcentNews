@@ -11,6 +11,7 @@ struct NewsView: View {
     @State var searchText: String = ""
     @StateObject var articleNewsViewModel = ArticleNewsVM()
     var text: String?
+    @State var isEmpty: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -23,6 +24,7 @@ struct NewsView: View {
                 .navigationTitle("Appcent News")
             
         }
+        .overlay(overlayView(isEmpty: isEmpty))
         .searchable(text: $searchText)
         .onSubmit(of: .search) {
             Task.init {
@@ -36,13 +38,19 @@ struct NewsView: View {
         if case let .success(articles) = articleNewsViewModel.phase {
             return articles
         } else {
+            isEmpty = true
             return []
+        }
+    }
+    
+    @ViewBuilder
+    func overlayView(isEmpty: Bool) -> some View {
+        if isEmpty {
+            PlaceholderView(text: "Couldn't fetch news", image: Image(systemName: "network.slash"))
         }
     }
 }
 
 #Preview {
-//    NewsView()
     ContentView()
-        
 }

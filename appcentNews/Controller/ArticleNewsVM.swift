@@ -38,7 +38,8 @@ class ArticleNewsVM: ObservableObject {
         if Task.isCancelled { return }
         phase = .empty
         do {
-            fetchTaskToken.query = query
+            let percentEncodedString = query?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+            fetchTaskToken.query = percentEncodedString
             let articles = try await newsAPI.fetch(query: fetchTaskToken.query)
             if Task.isCancelled { return }
             phase = .success(articles)
