@@ -24,10 +24,6 @@ struct NewsAPI {
         
     }
     
-//    func search(for query: String) async throws -> [Article] {
-//        
-//    }
-    
     private func fetchArticles(from url: URL) async throws -> [Article] {
         let (data, response) = try await session.data(from: url)
         
