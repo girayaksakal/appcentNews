@@ -12,7 +12,7 @@ struct ArticleEachView: View {
     let article: Article
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(spacing: 16) {
             
             // MARK: - ARTICLE IMAGE
             AsyncImage(url: article.imageURL) { phase in
@@ -26,7 +26,7 @@ struct ArticleEachView: View {
                 case .success(let image):
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                 case .failure(_):
                     HStack {
                         Spacer()
@@ -38,8 +38,10 @@ struct ArticleEachView: View {
                     fatalError()
                 }
             }
-            .frame(minWidth: 200, minHeight: 100)
-            .background(Color.gray.opacity(0.3))
+            .frame(minWidth: 200, minHeight: 200)
+            .background(Color.gray.opacity(0.1))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.horizontal, 10)
             
             VStack(alignment: .leading, spacing: 8) {
                 //  MARK: - ARTICLE TITLE

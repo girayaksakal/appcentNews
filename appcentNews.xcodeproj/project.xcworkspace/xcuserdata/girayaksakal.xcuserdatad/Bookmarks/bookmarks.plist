@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>21</string>
+					<key>EndingLineNumber</key>
+					<string>13</string>
+					<key>StartingColumnNumber</key>
+					<string>20</string>
+					<key>StartingLineNumber</key>
+					<string>13</string>
+					<key>Timestamp</key>
+					<string>737323007.0487649</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>appcentNews/Preview Content/news.json</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>"</string>
+				<key>leading</key>
+				<string>      "description": "Lions first-round draft pick Terrion Arnold says he could have been a Raider, if the flip of a coin had gone the other way.",
+      "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/terrion-arnold-raiders-told-me-it-was-a-coin-flip-between-me-and-brock-bowers-at-no-13",
+      "urlToImage": </string>
+				<key>trailing</key>
+				<string>https://nbcsports.brightspotcdn.com/dims4/default/05e0d11/2147483647/strip/true/crop/5616x3159+0+293/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2F55%2Fe4%2F2743d7d946898b2c206b91e44aed%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2150316007",
+      "publishedAt": "2024-05-08T20:08:55Z",
+      "content": "Lions first-round draft pick Terrion Arnold says he could have been a Raider, if the flip of a coin had gone the other way.\r\nArnold said on the Next Round podcast that someone on the Raiders coaching… [+1000 chars]"
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>
