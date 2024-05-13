@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ArticleListView: View {
+    @StateObject var articleFavoritesVM = ArticleFavoritesVM.shared
     
     let articles: [Article]
     @State private var selectedArticle: Article?
