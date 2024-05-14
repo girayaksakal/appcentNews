@@ -49,7 +49,7 @@ struct NewsAPI {
         let percentEncodedString = query?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
 //        let encodedString = query?.replacingOccurrences(of: " ", with: "+")
         var url = "https://newsapi.org/v2/"
-        if let input = query {
+        if let input = percentEncodedString {
            url += "everything?q=\(input)&"
         } else {
             url += "top-headlines?"
