@@ -1,6 +1,6 @@
 //
 //  ArticleNewsVM.swift
-//  appcentNews
+//  appcentNews v0.2.0-alpha
 //
 //  Created by Giray Aksakal on 12.05.2024.
 //

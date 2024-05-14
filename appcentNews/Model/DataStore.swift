@@ -1,6 +1,6 @@
 //
 //  DataStore.swift
-//  appcentNews
+//  appcentNews v0.2.0-alpha
 //
 //  Created by Giray Aksakal on 13.05.2024.
 //

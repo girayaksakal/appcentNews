@@ -10,7 +10,6 @@
 		14A43BC42BEC09E3006ECFF1 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A43BC32BEC09E3006ECFF1 /* NewsView.swift */; };
 		14A43BC62BEC0B32006ECFF1 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A43BC52BEC0B32006ECFF1 /* FavoritesView.swift */; };
 		14A43BC82BEC1B58006ECFF1 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A43BC72BEC1B58006ECFF1 /* NewsAPI.swift */; };
-		14A43BCB2BEC1E6A006ECFF1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 14A43BCA2BEC1E6A006ECFF1 /* Alamofire */; };
 		14A43BCD2BEC3891006ECFF1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A43BCC2BEC3891006ECFF1 /* Article.swift */; };
 		14AD92C82BEECE68003D252A /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD92C72BEECE68003D252A /* NewsAPIResponse.swift */; };
 		14AD92CA2BEF570F003D252A /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD92C92BEF570F003D252A /* ArticleListView.swift */; };
@@ -58,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A43BCB2BEC1E6A006ECFF1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +155,6 @@
 			);
 			name = appcentNews;
 			packageProductDependencies = (
-				14A43BCA2BEC1E6A006ECFF1 /* Alamofire */,
 			);
 			productName = appcentNews;
 			productReference = 14E304622BEC003100EC957C /* appcentNews.app */;
@@ -189,7 +186,6 @@
 			);
 			mainGroup = 14E304592BEC003100EC957C;
 			packageReferences = (
-				14A43BC92BEC1E6A006ECFF1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 14E304632BEC003100EC957C /* Products */;
 			projectDirPath = "";
@@ -367,12 +363,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"appcentNews/Preview Content\"";
 				DEVELOPMENT_TEAM = Q982S7K57N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = appcentNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Appcent News";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,7 +379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "0.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.girayaksakal.appcentNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -396,12 +394,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"appcentNews/Preview Content\"";
 				DEVELOPMENT_TEAM = Q982S7K57N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = appcentNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Appcent News";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "0.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.girayaksakal.appcentNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -441,25 +441,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		14A43BC92BEC1E6A006ECFF1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		14A43BCA2BEC1E6A006ECFF1 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 14A43BC92BEC1E6A006ECFF1 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14E3045A2BEC003100EC957C /* Project object */;
 }
