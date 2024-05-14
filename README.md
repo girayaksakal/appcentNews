@@ -34,10 +34,10 @@ Appcent News is a versatile iOS application designed to keep users updated with 
 
 ## Usage
 
-**Discover Top Headings:** You can browse lastest top headings in News tab!
-**Search For News:** If you want to be in control you can always scroll down in News tab to search from huge catalog of News!
-**Add to Favorites:** You can always add an article to favorites list by checking out top left corner to check out later!
-**Share Them:** Share news with a tap of button!
+- **Discover Top Headings:** You can browse lastest top headings in News tab!
+- **Search For News:** If you want to be in control you can always scroll down in News tab to search from huge catalog of News!
+- **Add to Favorites:** You can always add an article to favorites list by checking out top left corner to check out later!
+- **Share Them:** Share news with a tap of button!
 
 ## Contributing
 
